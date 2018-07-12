@@ -17,45 +17,9 @@ class ViewController: UIViewController {
         return imageView
     }()
     
-    let iconsContainerView: UIView = {
-        let containerView = UIView()
-        containerView.backgroundColor = .white
-        
-        let iconHeight: CGFloat = 38
-        let padding: CGFloat = 6
-        let images = [#imageLiteral(resourceName: "blue_like"), #imageLiteral(resourceName: "red_heart"), #imageLiteral(resourceName: "surprised"), #imageLiteral(resourceName: "cry_laugh"), #imageLiteral(resourceName: "cry"), #imageLiteral(resourceName: "angry")]
-
-        let arrangedSubviews = images.map({ (image) -> UIImageView in
-            let iv = UIImageView()
-            iv.image = image
-            iv.layer.cornerRadius = iconHeight / 2
-            //require for hit testing
-            iv.isUserInteractionEnabled = true
-            return iv
-        })
-        
-        let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
-        stackView.distribution = .fillEqually
-        
-        stackView.spacing = padding
-        stackView.layoutMargins = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        stackView.isLayoutMarginsRelativeArrangement = true
-        
-        containerView.addSubview(stackView)
-
-        let numIcons = CGFloat(arrangedSubviews.count)
-        let containerWidth = numIcons * iconHeight + (numIcons + 1) * padding
-        
-        containerView.frame = CGRect(x: 0, y: 0, width: containerWidth, height: iconHeight + 2 * padding)
-        containerView.layer.cornerRadius = containerView.frame.height / 2
-        containerView.layer.shadowColor = UIColor(white: 0.4, alpha: 0.4).cgColor
-        containerView.layer.shadowRadius = 8
-        containerView.layer.shadowOpacity = 0.5
-        containerView.layer.shadowOffset = CGSize(width: 0, height: 4)
-        
-        stackView.frame = containerView.frame
-
-        return containerView
+    let iconsContainerView: IconsContainerView = {
+        let iconsContainerView = IconsContainerView()
+        return iconsContainerView
     }()
     
     override func viewDidLoad() {
@@ -92,7 +56,6 @@ class ViewController: UIViewController {
                 self.iconsContainerView.transform = self.iconsContainerView.transform.translatedBy(x: 0, y: 50)
                 
             }, completion: {(_) in
-                
                 self.iconsContainerView.removeFromSuperview()
             })
             
@@ -116,6 +79,7 @@ class ViewController: UIViewController {
                     imageView.transform = .identity
                 })
                 hitTestView?.transform = CGAffineTransform(translationX: 0, y: -50)
+                
             }, completion: nil)
         }
         
@@ -123,6 +87,7 @@ class ViewController: UIViewController {
     
     fileprivate func handleGestureBegan(gesture: UILongPressGestureRecognizer){
         view.addSubview(iconsContainerView)
+        iconsContainerView.frame = CGRect(x: 0, y: 0, width: iconsContainerView.containerWidth ?? 0, height: iconsContainerView.containerHeight ?? 0)
         
         let pressedLocation = gesture.location(in: view)
         let centeredX = (view.frame.width - iconsContainerView.frame.width) / 2

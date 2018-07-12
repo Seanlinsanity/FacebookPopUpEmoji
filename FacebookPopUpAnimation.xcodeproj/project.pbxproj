@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144C21D320F71D3B007D203B /* IconsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144C21D220F71D3B007D203B /* IconsContainerView.swift */; };
 		14C19D3520EB1C4C003DEB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C19D3420EB1C4C003DEB8A /* AppDelegate.swift */; };
 		14C19D3720EB1C4C003DEB8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C19D3620EB1C4C003DEB8A /* ViewController.swift */; };
 		14C19D3A20EB1C4D003DEB8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C19D3820EB1C4D003DEB8A /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		144C21D220F71D3B007D203B /* IconsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsContainerView.swift; sourceTree = "<group>"; };
 		14C19D3120EB1C4C003DEB8A /* FacebookPopUpAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookPopUpAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C19D3420EB1C4C003DEB8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C19D3620EB1C4C003DEB8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				14C19D3420EB1C4C003DEB8A /* AppDelegate.swift */,
 				14C19D3620EB1C4C003DEB8A /* ViewController.swift */,
+				144C21D220F71D3B007D203B /* IconsContainerView.swift */,
 				14C19D3820EB1C4D003DEB8A /* Main.storyboard */,
 				14C19D3B20EB1C4D003DEB8A /* Assets.xcassets */,
 				14C19D3D20EB1C4D003DEB8A /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			files = (
 				14C19D3720EB1C4C003DEB8A /* ViewController.swift in Sources */,
 				14C19D3520EB1C4C003DEB8A /* AppDelegate.swift in Sources */,
+				144C21D320F71D3B007D203B /* IconsContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
